@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>
+        Question 2
+    </title>
+    <style>
+        table, th, tr, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            /* cell spacing */
+            border-spacing: 20px;
+            /* cell padding */
+            padding: 20px; 
+            text-align: center;
+        }
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id = "root">
+        <table>
+        <tr>
+            <th colspan="2">ID & Product type</th>
+            <th>Brand</th>
+            <th>Qty</th>
+        </tr>
+        
+        <tr>
+            <td>213</td>
+            <td rowspan="2">Laptop</td>
+            <td>Asus Vivobook</td>
+            <td>10</td>
+        </tr>
+        
+        <tr>
+            <td>214</td>
+            <td>Dell Latitude</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>213</td>
+            <td>Phone</td>
+            <td>Apple 99</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>213</td>
+            <td>VR</td>
+            <td>Meta Quest 12</td>
+            <td>1000</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

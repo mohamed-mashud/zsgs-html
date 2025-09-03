@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+    <style>
+        #root {
+            display: flex;
+            gap: 10px;
+        }
+
+        #root div {
+            flex: 1 1 300px;
+            max-width: 480px;
+            justify-content: space-around;
+            border-radius: 8px;
+        }
+
+        #root img {
+            width: 100%;            
+            height: auto;           
+            border-radius: 8px;     
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <img 
+                src="https://static.toiimg.com/photo/msid-68393598,width-96,height-65.cms" 
+                class = "shadow"
+                width = "480px"
+                height = "325px"
+                alt = "first image not loading"
+                title= " Vessel"
+            >
+        </div>
+        
+        <div>
+            <a 
+                href="https://dynamic-media.tacdn.com/media/photo-o/2f/11/c8/b7/caption.jpg?w=1100&h=800&s=1"
+            >
+                
+                <img 
+                    src="https://dynamic-media.tacdn.com/media/photo-o/2f/11/c8/b7/caption.jpg?w=1100&h=800&s=1" 
+                    class="shadow"
+                    width="480px"
+                    height="325px"
+                    loading="lazy"
+                    alt="third image not loading"
+                >
+            </a>
+        </div>
+
+        <div>
+            <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Milan_Cathedral_from_Piazza_del_Duomo.jpg/1280px-Milan_Cathedral_from_Piazza_del_Duomo.jpg" 
+                class="shadow"
+                width="480px"
+                height="325px"
+                alt="second image not loading"
+                title="Milan_Cathedral_from_Piazza_del_Duomo"
+                >
+            </div>
+            
+        
+    </div>
+</body>
+</html>
