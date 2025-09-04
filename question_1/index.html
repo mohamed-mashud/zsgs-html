@@ -5,32 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question 1</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* remove scrollbars */
+            box-sizing: border-box;
+        }
+
+        #root {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* full viewport */
+        }
+
+        .content-body {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .left-nav {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .content {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-nav {
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .content-body {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        
+        .header {
+          padding-bottom: 10px;  
+        }
+        
+        .top-nav {
+          margin-top: 10px;
+        }
+        
+        pre {
+          text-align: center;  
+        }
+        
+        .header,
+        .top-nav,
+        .footer {
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body> 
-    <div id = "root">
-        <div class = "header">
-            <pre> </pre>
+    <div id="root">
+        <div class="header" id="header">
+            <pre>HEADER</pre>
         </div>
         
-        <div class = "top-nav">
-            <pre> </pre>
+        <div class="top-nav" id="top-nav">
+            <pre>TOP NAV</pre>
+        </div>
+
+        <div class="content-body">
+            <div class="left-nav" id="left-nav">
+                <pre>LEFT NAV</pre>
+            </div>
+            
+            <div class="content">
+                <div>
+                    <pre>CONTENT</pre>
+                    <button onclick="prevLayout()">PREV</button> 
+                    <button onclick="nextLayout()">NEXT</button>
+                </div>
+            </div>
+            
+            <div class="right-nav" id="right-nav">
+                <pre>RIGHT NAV</pre>
+            </div>
         </div>
         
-        <div class = "left-nav">
-            <pre> </pre>
-        </div>
-        
-        <div class = "right-nav">
-            <pre> </pre>
-        </div>
-        
-        <div class = "content">
-            <pre> </pre>
-        </div>
-        
-        <div class = "footer">
-            <pre> </pre>
+        <div class="footer" id="footer">
+            <pre>FOOTER</pre>
         </div>
     </div>
+
+    <script>
+        let header    = document.getElementById('header');
+        let topNav    = document.getElementById('top-nav');
+        let leftNav   = document.getElementById('left-nav');
+        let rightNav  = document.getElementById('right-nav');
+        let footer    = document.getElementById('footer');
+
+        let headerAndFooterColor = "rgb(229, 227, 227)";
+        let otherColor           = "rgb(197, 195, 195)";
+
+        function setDisplayNone(inputE1) {
+            inputE1.style.display = "none";
+        }
+        
+        function setDisplayBlock(inputE1) {
+            inputE1.style.backgroundColor = otherColor;
+            inputE1.style.display = "block";
+        }
+
+        let currentLayoutNumber = 0;
+        changeVisibility();
+
+        function nextLayout() {
+            if(currentLayoutNumber == 6) return;
+            currentLayoutNumber++;
+            changeVisibility();
+        }
+        
+        function prevLayout() {
+            if(currentLayoutNumber <= 0) return;
+            currentLayoutNumber--;
+            changeVisibility();
+        }
+
+        function changeVisibility() {
+            switch (currentLayoutNumber) {
+                case 0:
+                    setDisplayNone(header);
+                    setDisplayNone(topNav);
+                    setDisplayNone(leftNav);
+                    setDisplayNone(rightNav);
+                    setDisplayNone(footer);
+                    break;
+                case 1:
+                    setDisplayBlock(header);
+                    setDisplayBlock(footer);
+                    setDisplayNone(topNav);
+                    setDisplayNone(leftNav);
+                    setDisplayNone(rightNav);
+                    break;
+                case 2:
+                    setDisplayBlock(header);
+                    setDisplayBlock(footer);
+                    setDisplayBlock(topNav);
+                    setDisplayNone(leftNav);
+                    setDisplayNone(rightNav);
+                    break;
+                case 3:
+                    setDisplayBlock(header);
+                    setDisplayBlock(footer);
+                    setDisplayBlock(leftNav);
+                    setDisplayNone(topNav);
+                    setDisplayNone(rightNav);
+                    break;
+                case 4:
+                    setDisplayBlock(header);
+                    setDisplayBlock(footer);
+                    setDisplayBlock(leftNav);
+                    setDisplayBlock(topNav);
+                    setDisplayNone(rightNav);
+                    break;
+                case 5:
+                    setDisplayBlock(header);
+                    setDisplayBlock(footer);
+                    setDisplayBlock(leftNav);
+                    setDisplayBlock(rightNav);
+                    setDisplayNone(topNav);
+                    break;
+                case 6:
+                    setDisplayBlock(header);
+                    setDisplayBlock(footer);
+                    setDisplayBlock(leftNav);
+                    setDisplayBlock(rightNav);
+                    setDisplayBlock(topNav);
+                    break;
+                default:
+                    console.error("error");
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>
