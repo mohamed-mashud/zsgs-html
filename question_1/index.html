@@ -6,8 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question 1</title>
-    <link rel="stylesheet" href="style.css">
     <style>
+        #root {
+            background-color: #e5e3e3;
+        }
+
+        body {
+            background-color: #e5e3e3;
+        }
+
         html, body {
             margin: 0;
             padding: 0;
@@ -87,8 +94,8 @@
             <div class="content">
                 <div>
                     <pre>CONTENT</pre>
-                    <button onclick="prevLayout()">PREV</button> 
-                    <button onclick="nextLayout()">NEXT</button>
+                    <button onclick="prevLayout()" id="prev-button">PREV</button> 
+                    <button onclick="nextLayout()" id="next-button">NEXT</button>
                 </div>
             </div>
             
@@ -103,22 +110,29 @@
     </div>
 
     <script>
-        let header    = document.getElementById('header');
-        let topNav    = document.getElementById('top-nav');
-        let leftNav   = document.getElementById('left-nav');
-        let rightNav  = document.getElementById('right-nav');
-        let footer    = document.getElementById('footer');
-
+        let header     = document.getElementById('header');
+        let topNav     = document.getElementById('top-nav');
+        let leftNav    = document.getElementById('left-nav');
+        let rightNav   = document.getElementById('right-nav');
+        let footer     = document.getElementById('footer');
+        let nextButton = document.getElementById('next-button');
+        let prevButton = document.getElementById('prev-button');
         let headerAndFooterColor = "rgb(229, 227, 227)";
         let otherColor           = "rgb(197, 195, 195)";
 
-        function setDisplayNone(inputE1) {
-            inputE1.style.display = "none";
+        function setDisplayNone(...inputE) {
+            for(let i of inputE)
+                i.style.display = "none";
         }
         
-        function setDisplayBlock(inputE1) {
-            inputE1.style.backgroundColor = otherColor;
-            inputE1.style.display = "block";
+        function setDisplayBlock(...inputE) {
+            for(let input of inputE) {
+                if(input !== prevButton && input !== nextButton)
+                    input.style.backgroundColor = otherColor;
+                else 
+                    input.style.backgroundColor = headerAndFooterColor;
+                input.style.display = "block";
+            }
         }
 
         let currentLayoutNumber = 0;
@@ -139,53 +153,32 @@
         function changeVisibility() {
             switch (currentLayoutNumber) {
                 case 0:
-                    setDisplayNone(header);
-                    setDisplayNone(topNav);
-                    setDisplayNone(leftNav);
-                    setDisplayNone(rightNav);
-                    setDisplayNone(footer);
+                    setDisplayNone(header,topNav,leftNav,rightNav,footer, prevButton);
+                    setDisplayBlock(nextButton);
                     break;
                 case 1:
-                    setDisplayBlock(header);
-                    setDisplayBlock(footer);
-                    setDisplayNone(topNav);
-                    setDisplayNone(leftNav);
-                    setDisplayNone(rightNav);
+                    setDisplayBlock(nextButton,prevButton,header,footer);
+                    setDisplayNone(topNav,leftNav,rightNav);
                     break;
                 case 2:
-                    setDisplayBlock(header);
-                    setDisplayBlock(footer);
-                    setDisplayBlock(topNav);
-                    setDisplayNone(leftNav);
+                    setDisplayBlock(nextButton,prevButton,header,footer,topNav,leftNav);
                     setDisplayNone(rightNav);
                     break;
                 case 3:
-                    setDisplayBlock(header);
-                    setDisplayBlock(footer);
-                    setDisplayBlock(leftNav);
-                    setDisplayNone(topNav);
-                    setDisplayNone(rightNav);
+                    setDisplayBlock(nextButton,prevButton,header,footer,leftNav);
+                    setDisplayNone(topNav,rightNav);
                     break;
                 case 4:
-                    setDisplayBlock(header);
-                    setDisplayBlock(footer);
-                    setDisplayBlock(leftNav);
-                    setDisplayBlock(topNav);
+                    setDisplayBlock(nextButton,prevButton,header,footer,leftNav,topNav);
                     setDisplayNone(rightNav);
                     break;
-                case 5:
-                    setDisplayBlock(header);
-                    setDisplayBlock(footer);
-                    setDisplayBlock(leftNav);
-                    setDisplayBlock(rightNav);
+                    case 5:
+                    setDisplayBlock(nextButton,prevButton,header,footer,leftNav,rightNav);
                     setDisplayNone(topNav);
                     break;
-                case 6:
-                    setDisplayBlock(header);
-                    setDisplayBlock(footer);
-                    setDisplayBlock(leftNav);
-                    setDisplayBlock(rightNav);
-                    setDisplayBlock(topNav);
+                    case 6:
+                    setDisplayBlock(nextButton,prevButton,header,footer,topNav,leftNav,rightNav);
+                    setDisplayNone(nextButton);
                     break;
                 default:
                     console.error("error");

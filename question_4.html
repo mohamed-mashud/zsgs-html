@@ -1,47 +1,165 @@
-<!-- 4. Create a home page for your self introduction with html tags and styles with in tags 
-concept. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta 
-        name="viewport" 
-        content="width=device-width, initial-scale=1.0"
-    >
-    <title>Masood</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masood - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #8cb8b1, #85bbc7, #98bbbb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 800px;
+      width: 90%;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      text-align: justify;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    ul li {
+      margin: 5px 0;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    ul li:hover {
+      transform: scale(1.05);
+      color: #0077cc;
+    }
+
+    a.button {
+      display: inline-block;
+      margin: 8px 5px 15px 0;
+      padding: 8px 16px;
+      font-size: 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      color: white;
+      transition: background 0.2s;
+    }
+
+    a.github {
+      background: #333;
+    }
+
+    a.github:hover {
+      background: #000;
+    }
+
+    a.linkedin {
+      background: #0a66c2;
+    }
+
+    a.linkedin:hover {
+      background: #004182;
+    }
+
+    .education {
+      font-weight: bold;
+      color: #444;
+      margin: 20px 0;
+    }
+
+    ol {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    ol li {
+      margin: 5px 0;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    ol li:hover {
+      transform: translateX(5px);
+      color: #0077cc;
+    }
+  </style>
 </head>
 <body>
-    <div style = "
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-    ">
-        <div>
-            <h1>
-                Hi, This is Masood's self intro!!!
-            </h1>
+  <div class="card">
+    <h1>Masood's Self Intro!</h1>
 
-            <p style="width: 300px;">
-                A guy who wants to be a software developer. He did all he can but fate doesnt let him become one or so he thinks. Now, he is trying his best to become one at yet another school hoping he would become one this time....
-            </p>
-            
-            <p style="width: 300px;">
-                He did some cool projects you can see em at <a href="https://github.com/mohamed-mashud">github</a>
-                If u wanna connect with him, here his <a href="https://www.linkedin.com/in/mohamedmasoodn/">linkedin</a> , 
-            </p>
-            <b>
-                Hobbies
-            </b>
-            <ol>
-                <li>Music</li>
-                <li>Exercising</li>
-                <li>Running</li>
-                <li>Exploring</li>
-                <li>Problem Solving</li>
-            </ol>
-        </div>
+    <p>
+      I’m Masood, an aspiring <strong>Software Developer</strong> with a strong
+      foundation in programming, problem-solving, and full-stack development.
+      I enjoy building impactful projects, collaborating with teams, and applying my technical knowledge to solve
+      real-world problems 🚀
+    </p>
+
+    <div style="margin-bottom: 15px;">
+      <a href="https://github.com/mohamed-mashud" class="button github">GitHub</a>
+      <a href="https://www.linkedin.com/in/mohamedmasoodn/" class="button linkedin">LinkedIn</a>
     </div>
+
+    <div class="education">
+      🎓 Graduated out of SMVEC in B.Tech (ECE) with 8.5 CGPA
+    </div>
+
+    <h3>💻 Projects</h3>
+<ul>
+  <li>
+    <a href="https://github.com/mohamed-mashud/banking-application" target="_blank" style="color:#0077cc; text-decoration:none; font-weight:bold;">
+      Banking Application (MERN)
+    </a> – Secure full-stack banking app with authentication and real-time transactions.
+  </li>
+  <li>
+    <a href="https://github.com/mohamed-mashud/crypto-monitoring" target="_blank" style="color:#0077cc; text-decoration:none; font-weight:bold;">
+      Crypto Monitoring System
+    </a> – Real-time crypto price tracker with Redis caching and alert system.
+  </li>
+</ul>
+
+
+    <h3>🏆 Achievements</h3>
+    <ul>
+      <li>Finalist – CII Innovation Competition 2024</li>
+      <li>Winner – Blind Coding at PTU 2024</li>
+      <li>Winner – Smart India Hackathon (Intra-College) 2023</li>
+      <li>Winner – Kavaach Hackathon (Intra-College) 2022</li>
+    </ul>
+
+    <h3>⚡ Skills</h3>
+    <p>C++, Java, Python, JavaScript, MERN stack, MySQL, MongoDB, Git</p>
+
+    <h3>🎯 Hobbies</h3>
+    <ol>
+      <li>Music</li>
+      <li>Exercising</li>
+      <li>Running</li>
+      <li>Exploring</li>
+      <li>Problem Solving</li>
+    </ol>
+  </div>
 </body>
 </html>
